@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'story-point-crystal-ball'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.nd4j', name: 'nd4j-native-platform', version: '0.9.1'
+    compile group: 'org.deeplearning4j', name: 'deeplearning4j-core', version: '0.9.1'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.10'
+}
+
+task toJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
