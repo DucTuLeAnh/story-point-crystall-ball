@@ -28,16 +28,13 @@ java -jar story-point-crystal-ball-all-1.0-SNAPSHOT.jar firstParam secondParam
 'firstParam' is the path where your data set lies (currently only .csv files work).
 'secondParam' is the path where your model should be saved (the model has to be saved as .zip file).
 
-I put an example .csv file into build/libs/storypoints.csv. Therefore you can directly run this command.
+I put an example .csv file into "src/main/resources/storypoints.csv".
 
-```
-java -jar story-point-crystal-ball-all-1.0-SNAPSHOT.jar storypoints.csv model.zip
-```
-Your model will then be created in the same folder. Now you are capable of running the jar for predicting story points.
+Now you are capable of running the jar for predicting story points.
 
 ### 2. Prediction mode
 The prediction mode allows you to run a dialog where you can select the attributes of your task. Based on the
-selections, the model will give you a effort estimate ranging from 1(easy) to 5 (hard).
+selections, the model will give you an effort estimate ranging from 1(easy) to 5 (hard).
 
 Run the following command:
 
@@ -45,13 +42,6 @@ Run the following command:
 java -jar story-point-crystal-ball-all-1.0-SNAPSHOT.jar firstParam
 ```
 'firstParam' is the path where your model as .zip file lies.
-
-If you have created your model in the same folder as in the previous section you can directly run the following
-command:
-
-```
-java -jar story-point-crystal-ball-all-1.0-SNAPSHOT.jar model.zip.
-```
 
 Once you run this command the Dialog will ask you for specifics about your task. You can select the attributes
 by typing the respective number showed in the dialog and pressing enter.
